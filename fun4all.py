@@ -9,6 +9,11 @@ from scipy.optimize import linprog
 import numpy as np
 from sympy import *
 
+###############################################
+#PARTIE A MODIFIER POUR DEFINIR LES PREFERENCES
+pref = ["x1>=x4", "x5>=x3", "x2>=x6"]
+###############################################
+
 
 #init sympy pour les simpification d'équations
 x, y = symbols('x y')
@@ -16,15 +21,12 @@ x, y = symbols('x y')
 #charger les vecteurs (propositions) depuis fun4all.txt
 data = load("fun4all.txt")
 
-#comparaison des propositions xi
-rules = ["x1>=x4", "x5>=x3", "x2>=x6"]
-
-print(f"Préférences : {rules}\n\n")
+print(f"Préférences : {pref}\n\n")
 
 #parsing des équations qui modélisent les préférences
 equations = []
 var = ["x", "y", "(1-x-y)"]
-for rule in rules :
+for rule in pref :
     expr = ''
     Lexpr = rule.split(">=")
     for i in range(len(data[Lexpr[0]])) :
@@ -93,15 +95,15 @@ for name1, vecteur1 in data.items() :
         if max_gx_gy < 0 :
             jugement = f"{name1} meilleur que {name2}" 
             print(jugement)
-            output.append(jugement+'\n')
+            output.append(jugement+'\n\n')
         if max_gy_gx < 0 :
-            jugement = f"{name1} moins bon {name2}"
+            jugement = f"{name1} moins bon que {name2}"
             print(jugement)
-            output.append(jugement+'\n')
+            output.append(jugement+'\n\n')
         if max_gx_gy >= 0 and max_gy_gx >= 0 :
             jugement = f"{name1} ni pire ni meilleur que {name2}"
             print(jugement)
-            output.append(jugement+'\n')
+            output.append(jugement+'\n\n')
         print("######################")
 
 save("output.txt", output)
