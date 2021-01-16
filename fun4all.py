@@ -1,32 +1,34 @@
-from loader import load
+#Paulin Brissonneau - 2021
+#Exercice fun4all - systèmes de décision
+
+import matplotlib.pyplot as plt
+import math
+from loader import load, save
 from parser import parse_equation
 from scipy.optimize import linprog
 import numpy as np
 from sympy import *
+
+
+#init sympy pour les simpification d'équations
 x, y = symbols('x y')
 
+#charger les vecteurs (propositions) depuis fun4all.txt
 data = load("fun4all.txt")
-
-
-#règles:
-
-A = (0,12,12)
-B = (13,13,13)
-C = (12,21,0)
 
 #comparaison des propositions xi
 rules = ["x1>=x4", "x5>=x3", "x2>=x6"]
 
-#rules = parse_rules(rules)
+print(f"Préférences : {rules}\n\n")
 
-equations2 = []
+#parsing des équations qui modélisent les préférences
+equations = []
 var = ["x", "y", "(1-x-y)"]
 for rule in rules :
     expr = ''
     Lexpr = rule.split(">=")
     for i in range(len(data[Lexpr[0]])) :
         dim = data[Lexpr[0]][i]
-        print(dim)
         expr += str(dim)+'*'+str(var[i])+' + '
     expr = expr[:-3]
     expr+=" >= "
@@ -34,125 +36,85 @@ for rule in rules :
         dim = data[Lexpr[1]][i]
         expr += str(dim)+'*'+str(var[i])+' + '
     expr = expr[:-3]
-    equations2.append(expr)
+    equations.append(expr)
     
+print(f"Equations de préférences : {equations}\n\n")
 
-equations = ["10*x + 50*y + 70*(1-x-y) >= 30*x + 10*y + 70*(1-x-y)", "60*x + 80*y + 45*(1-x-y) >= 40*x + 90*y + 45*(1-x-y)", "34*x + 56*y + 84*(1-x-y) >= 49*x + 56*y + 54*(1-x-y)"]
-print(equations)
-equations = equations2
-
-
-print(equations2)
-
-lhs_ineq2 = []
-rhs_ineq2 = []
-
+#simplification des équations et ajout des équations au solveur
+lhs_ineq = []
+rhs_ineq = []
 for eq in equations :
     a = str(simplify(eq))
     left, right = parse_equation(a)
-    lhs_ineq2.append(left)
-    rhs_ineq2.append(right)
+    lhs_ineq.append(left)
+    rhs_ineq.append(right)
 
-print(lhs_ineq2)
-print(rhs_ineq2)
 
-lhs_ineq = lhs_ineq2
-rhs_ineq = rhs_ineq2
-
-#ajout de la règle générale w<1/2
+#ajout de la règle générale w<1/2 (ne dépend pas des entrées, donc elle peut être codée en dur)
 lhs_ineq.append([ -1, -1])
 rhs_ineq.append(-0.5)
-
-bnd = [(0, 0.5),  # Bounds of x
+bnd = [(0, 0.5),
        (0, 0.5)]
 
+print(f"Equations du solveur : à gauche : {lhs_ineq} - à droite : {rhs_ineq} - limites {bnd}\n\n")
 
-print(data)
 
-#mise en équation
-#############################################################################
-"""
-lhs_ineq = [[ 1,  -2], 
-            [-2,  1], 
-            [ 3, 2],
-            [ -1, -1]] 
-
-rhs_ineq = [0,
-            0, 
-            2,
-            -0.5]"""
-
-  # Bounds of y
-
-#résolution le long des lignes pour trouver les sommets
-#####################################################################
+#résolution des contraintes par le solveur
+#pour trouver les sommets facilement, on optimise le problème selon chacun des axes-limites
 
 sommets = []
 
 directions = lhs_ineq+[list(-np.array(coord)) for coord in lhs_ineq]
-print(directions)
 for obj in directions :
     opt = linprog(c=obj, A_ub=lhs_ineq, b_ub=rhs_ineq, bounds=bnd,method="revised simplex")
-    print(opt.x)
     if list(opt.x) not in sommets:
         sommets.append(list(opt.x))
 
-print(sommets)
+print(f"Sommets du polyhèdre : {sommets}\n\n")
 
-#comparaison des vecteurs sur les sommets
-#######################################################################
+#comparaison de toutes les propositions sur chacun des sommets
+#on applique l'algorithme vu en TD
 
 def get_value (sommet, vecteur):
     return sum([sommet[i]*vecteur[i] for i in range(len(sommet))])
 
+output = []
+
+print("Préférences sur tous les vecteurs :\n")
 for name1, vecteur1 in data.items() :
     for name2, vecteur2 in data.items() :
-        #print(name1+' '+name2)
         max_gx_gy = -1
         max_gy_gx = -1
         for sommet in sommets :
-            #print(sommet)
             val1 = get_value (sommet, vecteur1)
             val2 = get_value (sommet, vecteur2)
             if val1 - val2 > max_gx_gy : max_gx_gy = val1 - val2
             if val2 - val1 > max_gy_gx : max_gy_gx = val2 - val1
-        print("######################")
         if max_gx_gy < 0 :
-            print(f"{name1} meilleur que {name2}")
+            jugement = f"{name1} meilleur que {name2}" 
+            print(jugement)
+            output.append(jugement+'\n')
         if max_gy_gx < 0 :
-            print(f"{name1} moins bon {name2}")
+            jugement = f"{name1} moins bon {name2}"
+            print(jugement)
+            output.append(jugement+'\n')
         if max_gx_gy >= 0 and max_gy_gx >= 0 :
-            print(f"{name1} ni pire ni meilleur {name2}")
+            jugement = f"{name1} ni pire ni meilleur que {name2}"
+            print(jugement)
+            output.append(jugement+'\n')
+        print("######################")
 
+save("output.txt", output)
 
-import matplotlib.pyplot as plt
-import math
+#tri des sommets selon l'argument en coordonnées polaires
+cent=(sum([p[0] for p in sommets])/len(sommets),sum([p[1] for p in sommets])/len(sommets))
+sommets.sort(key=lambda p: math.atan2(p[1]-cent[1],p[0]-cent[0]))
 
-pp = sommets
-cent=(sum([p[0] for p in pp])/len(pp),sum([p[1] for p in pp])/len(pp))
-pp.sort(key=lambda p: math.atan2(p[1]-cent[1],p[0]-cent[0]))
-
-x = [pp[i][0] for i in range(len(sommets))]
-y = [pp[i][1] for i in range(len(sommets))]
-
-print(sommets)
-
-#for i in range(len(sommets)) :
-#    for j in range(len(sommets)) :
-#        plt.plot([sommets[i][0], sommets[j][0]],[sommets[i][1], sommets[j][1]],'k-')
-
-plt.axis('equal')
-plt.savefig('polyhedre.png')
-#plt.show()
-
-
-
-import matplotlib.pyplot as plt
-x1 = [3, 6, 6, 3, 3]
-y1 = [2, 2, 4, 4, 2]
-x2 = [0, 9, 9, 0, 0]
-y2 = [0, 0, 6, 6, 0]
-
-
+#affichage du polyhèdre
+x = [sommets[i][0] for i in range(len(sommets))]
+y = [sommets[i][1] for i in range(len(sommets))]
 plt.fill(x, y, color='black')
+plt.axis('equal')
+plt.title("Polyhèdre : espace des valeurs acceptables")
+plt.savefig('polyhedre.png')
 plt.show()

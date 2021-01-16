@@ -12,3 +12,8 @@ def load(file) :
         data[L[i]] = [int(L[i+step]), int(L[i+2*step]), int(L[i+3*step])]
 
     return data
+
+
+def save(file, output) :
+    with open(file, "w") as f :
+        f.writelines(output)
