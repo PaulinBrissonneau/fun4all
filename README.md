@@ -3,7 +3,7 @@
 
 Pour lancer l'aglorithme : ```python fun4all.py```. Il se lancera avec les vecteurs  définis dans ```fun4all.txt``` et les préférences définies à la ligne 14 de ```fun4all.py```. Par défaut, ce sont les valeurs données dans le sujet mais l'algorithme fonctionne pour n'importe quelles préférences et valeurs cohérentes.
 
-Les résultats sont enregistrés dans ```polyhedre.png``` (valeurs possibles des poids) et ```output.txt``` (comparaison des propositions).
+Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des poids) et ```output.txt``` (comparaison des propositions).
 
 #### I - Structure du code :
 
@@ -12,16 +12,16 @@ Les résultats sont enregistrés dans ```polyhedre.png``` (valeurs possibles des
 * parsing des équations qui modélisent les préférences
 * simplification des équations grâce à [Sympy](https://www.sympy.org/en/index.html)
 * résolution du problème par le solveur [Scipy.otpimize](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html)
-* recherche des sommets du polyhèdre
+* recherche des sommets du polyèdre
 * comparaison de toutes les propositions sur chacun des sommets (algorithme vu en TD)
-* affichage du polyhèdre
+* affichage du polyèdre
 
 
-#### II - Solution des espaces de valeurs acceptables pour les poids (polyhedre.png) :
+#### II - Solution des espaces de valeurs acceptables pour les poids (polyedre.png) :
 
 *Solutions données pour les préférénces définies à la questions c.*
 
-![image polyhèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/polyhedre.png)
+![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/polyedre.png)
 
 
 #### III - Solution des comparaisons des propositions (output.txt) :

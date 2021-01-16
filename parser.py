@@ -2,11 +2,18 @@ from sympy import *
 
 def clean(expr) :
     expr = expr.replace("*", '').replace("x", '').replace("y", '').replace("+", '')
+    if '/' in expr :
+        a = expr.split('/')
+        if '-' in a[0] : return -float(a[0][1:])/float([1])
+        else : return float(a[0])/float(a[1])
+
     if expr == '' : return 1
     if expr == '-' : return -1
-    else : return int(expr)
+    else : return float(expr)
 
 def parse_equation(eq) :
+
+    print(eq)
 
     left = [None, None]
     right = None

@@ -72,7 +72,7 @@ for obj in directions :
     if list(opt.x) not in sommets:
         sommets.append(list(opt.x))
 
-print(f"Sommets du polyhèdre : {sommets}\n\n")
+print(f"Sommets du polyèdre : {sommets}\n\n")
 
 #comparaison de toutes les propositions sur chacun des sommets
 #on applique l'algorithme vu en TD
@@ -112,11 +112,11 @@ save("output.txt", output)
 cent=(sum([p[0] for p in sommets])/len(sommets),sum([p[1] for p in sommets])/len(sommets))
 sommets.sort(key=lambda p: math.atan2(p[1]-cent[1],p[0]-cent[0]))
 
-#affichage du polyhèdre
+#affichage du polyèdre
 x = [sommets[i][0] for i in range(len(sommets))]
 y = [sommets[i][1] for i in range(len(sommets))]
 plt.fill(x, y, color='black')
 plt.axis('equal')
-plt.title("Polyhèdre : espace des valeurs acceptables")
-plt.savefig('polyhedre.png')
-plt.show()
+plt.title(f"polyèdre : espace des valeurs acceptables\navec préférences : {pref}")
+plt.savefig(f'polyedre.png')
+#plt.show()
