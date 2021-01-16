@@ -19,10 +19,18 @@ Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des 
 
 #### II - Solution des espaces de valeurs acceptables pour les poids (polyedre.png) :
 
-*Solutions données pour les préférénces définies à la questions c.*
+*Solutions données pour les préférénces définies à la questions c (["x1>=x4", "x5>=x3", "x2>=x6"]).*
 
 ![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/polyedre.png)
 
+
+*Exemples d'autres solutions avec des préférences différentes*
+
+![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/exemples/polyedre_x2>=x4_x5>=x3_x2>=x6.png)
+
+![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/exemples/polyedre_x3>=x4_x5>=x3_x2>=x6.png)
+
+![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/exemples/polyedre_x5>=x4_x5>=x3_x2>=x6.png)
 
 #### III - Solution des comparaisons des propositions (output.txt) :
 
