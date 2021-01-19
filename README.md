@@ -7,7 +7,7 @@ Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des 
 
 #### I - Structure du code :
 
-* défintion des préférences par l'utilisateur
+* définition des préférences par l'utilisateur
 * chargement des vecteurs (propositions) depuis fun4all.txt
 * parsing des équations qui modélisent les préférences
 * simplification des équations grâce à [Sympy](https://www.sympy.org/en/index.html)
