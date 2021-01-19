@@ -7,7 +7,19 @@ Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des 
 
 [ Si besoin, tout le contenu du .zip rendu sur Edunao est aussi disponible ici : https://github.com/PaulinBrissonneau/fun4all ]
 
-#### I - Structure du code :
+
+#### I - Requirements :
+
+En plus des classiques :
+> matplotlib et numpy
+
+J'utilise  une librairie de calcul formel :
+> sympy : `pip install sympy`
+
+Et un solveur :
+> scipy.optimize :  `pip install scipy`
+
+#### II - Structure du code :
 
 * définition des préférences par l'utilisateur
 * chargement des vecteurs (propositions) depuis fun4all.txt
@@ -19,7 +31,7 @@ Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des 
 * affichage du polyèdre
 
 
-#### II - Solution des espaces de valeurs acceptables pour les poids (polyedre.png) :
+#### III - Solution des espaces de valeurs acceptables pour les poids (polyedre.png) :
 
 *Solutions données pour les préférénces définies à la questions c (["x1>=x4", "x5>=x3", "x2>=x6"]).*
 
@@ -34,7 +46,7 @@ Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des 
 
 ![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/exemples/polyedre_x5>=x4_x5>=x3_x2>=x6.png)
 
-#### III - Solution des comparaisons des propositions (output.txt) :
+#### IV - Solution des comparaisons des propositions (output.txt) :
 
 *Solutions données pour les vecteurs du sujet (fun4all.txt) et les préférénces définies à la questions c.*
 
