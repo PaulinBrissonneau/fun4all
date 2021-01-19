@@ -5,6 +5,8 @@ Pour lancer l'aglorithme : ```python fun4all.py```. Il se lancera avec les vecte
 
 Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des poids) et ```output.txt``` (comparaison des propositions).
 
+[ Si besoin, tout le contenu du .zip rendu sur Edunao est aussi disponible ici : https://github.com/PaulinBrissonneau/fun4all ]
+
 #### I - Structure du code :
 
 * définition des préférences par l'utilisateur
