@@ -1,288 +1,288 @@
-x1 ni pire ni meilleur que x1
+x1 ne peut pas être comparé à x1
 
-x1 meilleur que x2
+x1 moins bon que x2
 
-x1 meilleur que x3
+x1 moins bon que x3
 
-x1 ni pire ni meilleur que x4
+x1 ne peut pas être comparé à x4
 
-x1 meilleur que x5
+x1 moins bon que x5
 
-x1 meilleur que x6
+x1 moins bon que x6
 
-x1 ni pire ni meilleur que x7
+x1 ne peut pas être comparé à x7
 
-x1 ni pire ni meilleur que x8
+x1 ne peut pas être comparé à x8
 
-x1 meilleur que x9
+x1 ne peut pas être comparé à x9
 
-x1 meilleur que x10
+x1 ne peut pas être comparé à x10
 
-x1 meilleur que x11
+x1 ne peut pas être comparé à x11
 
-x1 meilleur que x12
+x1 ne peut pas être comparé à x12
 
-x2 moins bon que x1
+x2 meilleur que x1
 
-x2 ni pire ni meilleur que x2
+x2 ne peut pas être comparé à x2
 
-x2 meilleur que x3
+x2 ne peut pas être comparé à x3
 
-x2 moins bon que x4
+x2 meilleur que x4
 
-x2 meilleur que x5
+x2 ne peut pas être comparé à x5
 
-x2 meilleur que x6
+x2 ne peut pas être comparé à x6
 
-x2 ni pire ni meilleur que x7
+x2 ne peut pas être comparé à x7
 
-x2 moins bon que x8
+x2 meilleur que x8
 
-x2 meilleur que x9
+x2 ne peut pas être comparé à x9
 
-x2 ni pire ni meilleur que x10
+x2 ne peut pas être comparé à x10
 
-x2 meilleur que x11
+x2 ne peut pas être comparé à x11
 
-x2 ni pire ni meilleur que x12
+x2 meilleur que x12
 
-x3 moins bon que x1
+x3 meilleur que x1
 
-x3 moins bon que x2
+x3 ne peut pas être comparé à x2
 
-x3 ni pire ni meilleur que x3
+x3 ne peut pas être comparé à x3
 
-x3 moins bon que x4
+x3 meilleur que x4
 
-x3 ni pire ni meilleur que x5
+x3 ne peut pas être comparé à x5
 
-x3 moins bon que x6
+x3 ne peut pas être comparé à x6
 
-x3 ni pire ni meilleur que x7
+x3 ne peut pas être comparé à x7
 
-x3 moins bon que x8
+x3 ne peut pas être comparé à x8
 
-x3 ni pire ni meilleur que x9
+x3 meilleur que x9
 
-x3 moins bon que x10
+x3 meilleur que x10
 
-x3 moins bon que x11
+x3 meilleur que x11
 
-x3 moins bon que x12
+x3 meilleur que x12
 
-x4 ni pire ni meilleur que x1
+x4 ne peut pas être comparé à x1
 
-x4 meilleur que x2
+x4 moins bon que x2
 
-x4 meilleur que x3
+x4 moins bon que x3
 
-x4 ni pire ni meilleur que x4
+x4 ne peut pas être comparé à x4
 
-x4 meilleur que x5
+x4 moins bon que x5
 
-x4 meilleur que x6
+x4 moins bon que x6
 
-x4 meilleur que x7
+x4 ne peut pas être comparé à x7
 
-x4 meilleur que x8
+x4 moins bon que x8
 
-x4 meilleur que x9
+x4 ne peut pas être comparé à x9
 
-x4 meilleur que x10
+x4 ne peut pas être comparé à x10
 
-x4 meilleur que x11
+x4 moins bon que x11
 
-x4 meilleur que x12
+x4 ne peut pas être comparé à x12
 
-x5 moins bon que x1
+x5 meilleur que x1
 
-x5 moins bon que x2
+x5 ne peut pas être comparé à x2
 
-x5 ni pire ni meilleur que x3
+x5 ne peut pas être comparé à x3
 
-x5 moins bon que x4
+x5 meilleur que x4
 
-x5 ni pire ni meilleur que x5
+x5 ne peut pas être comparé à x5
 
-x5 moins bon que x6
+x5 meilleur que x6
 
-x5 moins bon que x7
+x5 meilleur que x7
 
-x5 moins bon que x8
+x5 meilleur que x8
 
-x5 moins bon que x9
+x5 meilleur que x9
 
-x5 moins bon que x10
+x5 meilleur que x10
 
-x5 moins bon que x11
+x5 meilleur que x11
 
-x5 moins bon que x12
+x5 meilleur que x12
 
-x6 moins bon que x1
+x6 meilleur que x1
 
-x6 moins bon que x2
+x6 ne peut pas être comparé à x2
 
-x6 meilleur que x3
+x6 ne peut pas être comparé à x3
 
-x6 moins bon que x4
+x6 meilleur que x4
 
-x6 meilleur que x5
+x6 moins bon que x5
 
-x6 ni pire ni meilleur que x6
+x6 ne peut pas être comparé à x6
 
-x6 ni pire ni meilleur que x7
+x6 ne peut pas être comparé à x7
 
-x6 moins bon que x8
+x6 ne peut pas être comparé à x8
 
-x6 meilleur que x9
+x6 ne peut pas être comparé à x9
 
-x6 ni pire ni meilleur que x10
+x6 ne peut pas être comparé à x10
 
-x6 ni pire ni meilleur que x11
+x6 ne peut pas être comparé à x11
 
-x6 ni pire ni meilleur que x12
+x6 meilleur que x12
 
-x7 ni pire ni meilleur que x1
+x7 ne peut pas être comparé à x1
 
-x7 ni pire ni meilleur que x2
+x7 ne peut pas être comparé à x2
 
-x7 ni pire ni meilleur que x3
+x7 ne peut pas être comparé à x3
 
-x7 moins bon que x4
+x7 ne peut pas être comparé à x4
 
-x7 meilleur que x5
+x7 moins bon que x5
 
-x7 ni pire ni meilleur que x6
+x7 ne peut pas être comparé à x6
 
-x7 ni pire ni meilleur que x7
+x7 ne peut pas être comparé à x7
 
-x7 moins bon que x8
+x7 ne peut pas être comparé à x8
 
-x7 ni pire ni meilleur que x9
+x7 ne peut pas être comparé à x9
 
-x7 ni pire ni meilleur que x10
+x7 ne peut pas être comparé à x10
 
-x7 ni pire ni meilleur que x11
+x7 ne peut pas être comparé à x11
 
-x7 ni pire ni meilleur que x12
+x7 ne peut pas être comparé à x12
 
-x8 ni pire ni meilleur que x1
+x8 ne peut pas être comparé à x1
 
-x8 meilleur que x2
+x8 moins bon que x2
 
-x8 meilleur que x3
+x8 ne peut pas être comparé à x3
 
-x8 moins bon que x4
+x8 meilleur que x4
 
-x8 meilleur que x5
+x8 moins bon que x5
 
-x8 meilleur que x6
+x8 ne peut pas être comparé à x6
 
-x8 meilleur que x7
+x8 ne peut pas être comparé à x7
 
-x8 ni pire ni meilleur que x8
+x8 ne peut pas être comparé à x8
 
-x8 meilleur que x9
+x8 ne peut pas être comparé à x9
 
-x8 meilleur que x10
+x8 ne peut pas être comparé à x10
 
-x8 meilleur que x11
+x8 ne peut pas être comparé à x11
 
-x8 meilleur que x12
+x8 ne peut pas être comparé à x12
 
-x9 moins bon que x1
+x9 ne peut pas être comparé à x1
 
-x9 moins bon que x2
+x9 ne peut pas être comparé à x2
 
-x9 ni pire ni meilleur que x3
+x9 moins bon que x3
 
-x9 moins bon que x4
+x9 ne peut pas être comparé à x4
 
-x9 meilleur que x5
+x9 moins bon que x5
 
-x9 moins bon que x6
+x9 ne peut pas être comparé à x6
 
-x9 ni pire ni meilleur que x7
+x9 ne peut pas être comparé à x7
 
-x9 moins bon que x8
+x9 ne peut pas être comparé à x8
 
-x9 ni pire ni meilleur que x9
+x9 ne peut pas être comparé à x9
 
-x9 moins bon que x10
+x9 meilleur que x10
 
-x9 moins bon que x11
+x9 ne peut pas être comparé à x11
 
-x9 moins bon que x12
+x9 meilleur que x12
 
-x10 moins bon que x1
+x10 ne peut pas être comparé à x1
 
-x10 ni pire ni meilleur que x2
+x10 ne peut pas être comparé à x2
 
-x10 meilleur que x3
+x10 moins bon que x3
 
-x10 moins bon que x4
+x10 ne peut pas être comparé à x4
 
-x10 meilleur que x5
+x10 moins bon que x5
 
-x10 ni pire ni meilleur que x6
+x10 ne peut pas être comparé à x6
 
-x10 ni pire ni meilleur que x7
+x10 ne peut pas être comparé à x7
 
-x10 moins bon que x8
+x10 ne peut pas être comparé à x8
 
-x10 meilleur que x9
+x10 moins bon que x9
 
-x10 ni pire ni meilleur que x10
+x10 ne peut pas être comparé à x10
 
-x10 ni pire ni meilleur que x11
+x10 ne peut pas être comparé à x11
 
-x10 moins bon que x12
+x10 ne peut pas être comparé à x12
 
-x11 moins bon que x1
+x11 ne peut pas être comparé à x1
 
-x11 moins bon que x2
+x11 ne peut pas être comparé à x2
 
-x11 meilleur que x3
+x11 moins bon que x3
 
-x11 moins bon que x4
+x11 meilleur que x4
 
-x11 meilleur que x5
+x11 moins bon que x5
 
-x11 ni pire ni meilleur que x6
+x11 ne peut pas être comparé à x6
 
-x11 ni pire ni meilleur que x7
+x11 ne peut pas être comparé à x7
 
-x11 moins bon que x8
+x11 ne peut pas être comparé à x8
 
-x11 meilleur que x9
+x11 ne peut pas être comparé à x9
 
-x11 ni pire ni meilleur que x10
+x11 ne peut pas être comparé à x10
 
-x11 ni pire ni meilleur que x11
+x11 ne peut pas être comparé à x11
 
-x11 moins bon que x12
+x11 meilleur que x12
 
-x12 moins bon que x1
+x12 ne peut pas être comparé à x1
 
-x12 ni pire ni meilleur que x2
+x12 moins bon que x2
 
-x12 meilleur que x3
+x12 moins bon que x3
 
-x12 moins bon que x4
+x12 ne peut pas être comparé à x4
 
-x12 meilleur que x5
+x12 moins bon que x5
 
-x12 ni pire ni meilleur que x6
+x12 moins bon que x6
 
-x12 ni pire ni meilleur que x7
+x12 ne peut pas être comparé à x7
 
-x12 moins bon que x8
+x12 ne peut pas être comparé à x8
 
-x12 meilleur que x9
+x12 moins bon que x9
 
-x12 meilleur que x10
+x12 ne peut pas être comparé à x10
 
-x12 meilleur que x11
+x12 moins bon que x11
 
-x12 ni pire ni meilleur que x12
+x12 ne peut pas être comparé à x12
 

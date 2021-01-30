@@ -62,7 +62,7 @@ print(f"Equations du solveur : à gauche : {lhs_ineq} - à droite : {rhs_ineq} -
 
 
 #résolution des contraintes par le solveur
-#pour trouver les sommets facilement, on optimise le problème selon chacun des axes-limites
+#pour trouver les sommets facilement, on optimise le problème selon chacun des axes-frontières du polyèdre
 
 sommets = []
 
@@ -71,6 +71,12 @@ for obj in directions :
     opt = linprog(c=obj, A_ub=lhs_ineq, b_ub=rhs_ineq, bounds=bnd,method="revised simplex")
     if list(opt.x) not in sommets:
         sommets.append(list(opt.x))
+
+
+#on ajoute le poids w3 calculé à partir de w1 et w2
+for sommet in sommets :
+    sommet.append(1-sommet[0]-sommet[1])
+    assert(sum(sommet) == 1)
 
 print(f"Sommets du polyèdre : {sommets}\n\n")
 
@@ -92,16 +98,19 @@ for name1, vecteur1 in data.items() :
             val2 = get_value (sommet, vecteur2)
             if val1 - val2 > max_gx_gy : max_gx_gy = val1 - val2
             if val2 - val1 > max_gy_gx : max_gy_gx = val2 - val1
+        #si le max est négatif, alors x est moins bon partout sur le polyèdre
         if max_gx_gy < 0 :
-            jugement = f"{name1} meilleur que {name2}" 
-            print(jugement)
-            output.append(jugement+'\n\n')
-        if max_gy_gx < 0 :
             jugement = f"{name1} moins bon que {name2}"
             print(jugement)
             output.append(jugement+'\n\n')
+        #si le max est négatif, alors y est moins bon partout sur le polyèdre
+        if max_gy_gx < 0 :
+            jugement = f"{name1} meilleur que {name2}" 
+            print(jugement)
+            output.append(jugement+'\n\n')
+        #si les deux max sont positifs, alors on ne peut rien dire
         if max_gx_gy >= 0 and max_gy_gx >= 0 :
-            jugement = f"{name1} ni pire ni meilleur que {name2}"
+            jugement = f"{name1} ne peut pas être comparé à {name2}"
             print(jugement)
             output.append(jugement+'\n\n')
         print("######################")
