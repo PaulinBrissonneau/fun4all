@@ -120,6 +120,14 @@ for name1, vecteur1 in data.items() :
             output.append(jugement+'\n\n')
         print("######################")
 
+
+########################
+# NOTE sur cette fonction : on peut mettre des inégalités larges.
+# Cela transformerait les comparaisons de type "est meilleur que" en "est au moins aussi bon que".
+# Cela correspondrait avec la façon dont les préférences sont données. En particulier, on pourrait inférer "x1 au moins aussi bon que x4", ce qui est donné dans les préférences.
+# Comme la correction de l'exercice propose de garder des inégalités strictes, on les garde pour le programme. Mais on perd l'information que "x1 au moins aussi bon que x4", par exemple.
+########################
+
 save("output.txt", output)
 
 #tri des sommets selon l'argument en coordonnées polaires
