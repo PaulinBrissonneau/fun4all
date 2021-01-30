@@ -4,7 +4,7 @@ def clean(expr) :
     expr = expr.replace("*", '').replace("x", '').replace("y", '').replace("+", '')
     if '/' in expr :
         a = expr.split('/')
-        if '-' in a[0] : return -float(a[0][1:])/float([1])
+        if '-' in a[0] : return -float(a[0][1:])/float(a[1])
         else : return float(a[0])/float(a[1])
 
     if expr == '' : return 1
