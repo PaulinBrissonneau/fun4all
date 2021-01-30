@@ -8,6 +8,7 @@ from parser import parse_equation
 from scipy.optimize import linprog
 import numpy as np
 from sympy import *
+import sys
 
 ###############################################
 #PARTIE A MODIFIER POUR DEFINIR LES PREFERENCES
@@ -73,6 +74,9 @@ for obj in directions :
     if list(opt.x) not in sommets:
         sommets.append(list(opt.x))
 
+if len(sommets) <= 2 :
+    print("Pas de solution : polyèdre vide")
+    sys.exit()
 
 #on ajoute le poids w3 calculé à partir de w1 et w2
 for sommet in sommets :

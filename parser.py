@@ -13,8 +13,6 @@ def clean(expr) :
 
 def parse_equation(eq) :
 
-    print(eq)
-
     left = [None, None]
     right = None
     split = eq.split(' ')
