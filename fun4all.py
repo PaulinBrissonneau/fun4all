@@ -4,52 +4,37 @@
 import matplotlib.pyplot as plt
 import math
 from loader import load, save
-from parser import parse_equation
 from scipy.optimize import linprog
 import numpy as np
-from sympy import *
 import sys
 
 ###############################################
 #PARTIE A MODIFIER POUR DEFINIR LES PREFERENCES
 #il faut respecter la syntaxe xi>=xj
 pref = ["x1>=x4", "x5>=x3", "x2>=x6"]
+#pref = ["x5>=x2", "x7>=x6", "x3>=x11", "x9>=x10"]
+#pref = ['x2>=x4', 'x5>=x3', 'x2>=x6']
+#pref = ['x3>=x4', 'x5>=x3', 'x2>=x6']
+#pref = ['x5>=x4', 'x5>=x3', 'x2>=x6']
 ###############################################
-
-
-#init sympy pour les simpification d'équations
-x, y = symbols('x y')
 
 #charger les vecteurs (propositions) depuis fun4all.txt
 data = load("fun4all.txt")
 
 print(f"Préférences : {pref}\n\n")
 
-#parsing des équations qui modélisent les préférences
-equations = []
-var = ["x", "y", "(1-x-y)"]
-for rule in pref :
-    expr = ''
-    Lexpr = rule.split(">=")
-    for i in range(len(data[Lexpr[0]])) :
-        dim = data[Lexpr[0]][i]
-        expr += str(dim)+'*'+str(var[i])+' + '
-    expr = expr[:-3]
-    expr+=" >= "
-    for i in range(len(data[Lexpr[1]])) :
-        dim = data[Lexpr[1]][i]
-        expr += str(dim)+'*'+str(var[i])+' + '
-    expr = expr[:-3]
-    equations.append(expr)
-    
-print(f"Equations de préférences : {equations}\n\n")
-
-#simplification des équations et ajout des équations au solveur
+#construction du système linéaire à résoudre par le solveur
 lhs_ineq = []
 rhs_ineq = []
-for eq in equations :
-    a = str(simplify(eq))
-    left, right = parse_equation(a)
+
+for rule in pref :
+    Lexpr = rule.split(">=")
+    data_left = data[str(Lexpr[0])]
+    data_right = data[str(Lexpr[1])]
+    
+    left = [data_right[0]-data_left[0]-data_right[2]+data_left[2], data_right[1]-data_left[1]-data_right[2]+data_left[2]]
+    right = data_left[2]-data_right[2]
+
     lhs_ineq.append(left)
     rhs_ineq.append(right)
 
@@ -81,7 +66,6 @@ if len(sommets) <= 2 :
 #on ajoute le poids w3 calculé à partir de w1 et w2
 for sommet in sommets :
     sommet.append(1-sommet[0]-sommet[1])
-    assert(sum(sommet) == 1)
 
 print(f"Sommets du polyèdre : {sommets}\n\n")
 
@@ -141,4 +125,3 @@ plt.fill(x, y, color='black')
 plt.axis('equal')
 plt.title(f"polyèdre : espace des valeurs acceptables\navec préférences : {pref}")
 plt.savefig(f'polyedre.png')
-#plt.show()
