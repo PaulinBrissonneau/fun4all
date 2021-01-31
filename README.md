@@ -7,6 +7,9 @@ Pour lancer l'aglorithme : ```python fun4all.py```. Il se lancera avec les vecte
 
 Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des poids) et ```output.txt``` (comparaison des propositions).
 
+NOTE :
+Pour comparer les vecteurs sur les sommets du polyèdres, on peut mettre des inégalités larges (lignes 91 et 96 de fun4all.py). Cela transformerait les comparaisons de type "est meilleur que" en "est au moins aussi bon que". Cela correspondrait avec la façon dont les préférences sont données. En particulier, on pourrait inférer "x1 au moins aussi bon que x4", ce qui est donné dans les préférences. Comme la correction de l'exercice propose de garder des inégalités strictes, on les garde pour le programme. Mais on perd l'information que "x1 au moins aussi bon que x4", par exemple.
+
 
 #### I - Requirements :
 
