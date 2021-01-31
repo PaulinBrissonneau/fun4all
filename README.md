@@ -3,7 +3,7 @@
 
 [ Si besoin, tout le contenu du .zip rendu sur Edunao est aussi disponible ici : https://github.com/PaulinBrissonneau/fun4all ]
 
-Pour lancer l'aglorithme : ```python fun4all.py```. Il se lancera avec les vecteurs  définis dans ```fun4all.txt``` et les préférences définies à la ligne 14 de ```fun4all.py```. Par défaut, ce sont les valeurs données dans le sujet mais l'algorithme fonctionne pour n'importe quelles préférences et valeurs cohérentes.
+Pour lancer l'aglorithme : ```python fun4all.py```. Il se lancera avec les vecteurs  définis dans ```fun4all.txt``` et les préférences définies à la ligne 14 de ```fun4all.py```. Par défaut, ce sont les valeurs données dans le sujet mais l'algorithme fonctionne pour n'importe quelles préférences et valeurs cohérentes. Si le polyèdre est vide, l'algorithme retournera "Pas de solution : polyèdre vide".
 
 Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des poids) et ```output.txt``` (comparaison des propositions).
 
@@ -13,18 +13,15 @@ Les résultats sont enregistrés dans ```polyedre.png``` (valeurs possibles des 
 En plus des classiques :
 > matplotlib et numpy
 
-J'utilise  une librairie de calcul formel :
-> sympy : `pip install sympy`
-
-Et un solveur :
+J'utilise le solveur :
 > scipy.optimize :  `pip install scipy`
+
 
 #### II - Structure du code :
 
 * définition des préférences par l'utilisateur
 * chargement des vecteurs (propositions) depuis fun4all.txt
-* parsing des équations qui modélisent les préférences
-* simplification des équations grâce à [Sympy](https://www.sympy.org/en/index.html)
+* construction du système linéaire à résoudre par le solveur
 * résolution du problème par le solveur [Scipy.otpimize](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html)
 * recherche des sommets du polyèdre
 * comparaison de toutes les propositions sur chacun des sommets (algorithme vu en TD)
@@ -45,6 +42,8 @@ Et un solveur :
 ![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/exemples/polyedre_x3>=x4_x5>=x3_x2>=x6.png)
 
 ![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/exemples/polyedre_x5>=x4_x5>=x3_x2>=x6.png)
+
+![image polyèdre](https://raw.githubusercontent.com/PaulinBrissonneau/fun4all/main/exemples/polyedre_x5>=x2_x7>=x6_x3>=x11_x9>=x10.png)
 
 #### IV - Solution des comparaisons des propositions (output.txt) :
 
